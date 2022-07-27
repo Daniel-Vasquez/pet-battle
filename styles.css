@@ -1,0 +1,411 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+}
+
+.container-github,
+.container-linkerind {
+  border-bottom: 1px solid transparent;
+  transition: all .3s;
+}
+
+.container-github:hover {
+  transform: scale(0.92);
+  border-bottom-color: black;
+}
+
+.link-github {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.link-linkerind {
+  text-decoration: none;
+  color: #0a66c2;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.container-linkerind:hover {
+  transform: scale(0.92);
+  border-bottom-color: #0a66c2;
+}
+
+
+.containerGeneral {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding: 0 7px;
+}
+
+.main-title {
+  margin: 0;
+}
+
+.pets-title {
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.pets {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pets-pet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  transition: all .3s;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.pets-pet:hover {
+  transform: scale(.80);
+}
+
+
+.pet-img {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.pets-pet:focus-within {
+  border-color: #c9c9c9;
+  transform: scale(1.2);
+}
+
+.pet-text {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pet-img__img {
+  width: 80px;
+  margin: 0 auto;
+}
+
+.pet-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin: 0 auto;
+}
+
+
+.pet-input:checked {
+  border: 6px solid black;
+}
+
+/* --------------------# Botones ------------------- */
+
+/* Btn Fuego */
+.spanBtnFuego {
+  display: inline-flex;
+  width: 100px;
+  height: 40px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+
+.spanBtnFuego .spanBtnFuego-btn {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+}
+
+.spanBtnFuego .spanBtnFuego-btn:before {
+  position: absolute;
+  content: "FUEGO";
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.spanBtnFuego .spanBtnFuego-btn:after {
+  position: absolute;
+  content: "🔥";
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.spanBtnFuego .spanBtnFuego-btn:before {
+  color: #fff;
+  background-color: #e63946;
+  transform: rotateY(0deg) translateZ(19px);
+}
+
+.spanBtnFuego .spanBtnFuego-btn:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(17px);
+}
+
+.spanBtnFuego .spanBtnFuego-btn:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+/* Btn Agua */
+
+.spanBtnAgua {
+  display: inline-flex;
+  width: 100px;
+  height: 40px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+
+.spanBtnAgua .spanBtnAgua-btn {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+}
+
+.spanBtnAgua .spanBtnAgua-btn:before {
+  position: absolute;
+  content: "AGUA";
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.spanBtnAgua .spanBtnAgua-btn:after {
+  position: absolute;
+  content: "💧";
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.spanBtnAgua .spanBtnAgua-btn:before {
+  color: #fff;
+  background-color: #90e0ef;
+  transform: rotateY(0deg) translateZ(19px);
+}
+
+.spanBtnAgua .spanBtnAgua-btn:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(17px);
+}
+
+.spanBtnAgua .spanBtnAgua-btn:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+/* Btn Tierra */
+
+.spanBtnTiera {
+  display: inline-flex;
+  width: 100px;
+  height: 40px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+
+.spanBtnTiera .spanBtnTiera-btn {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+}
+
+.spanBtnTiera .spanBtnTiera-btn:before {
+  position: absolute;
+  content: "TIERRA";
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.spanBtnTiera .spanBtnTiera-btn:after {
+  position: absolute;
+  content: "🌱";
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.spanBtnTiera .spanBtnTiera-btn:before {
+  color: #fff;
+  background-color: #c0826c;
+  transform: rotateY(0deg) translateZ(19px);
+}
+
+.spanBtnTiera .spanBtnTiera-btn:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(17px);
+}
+
+.spanBtnTiera .spanBtnTiera-btn:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+/* --------------------/ Botones ------------------- */
+
+.containerBtns {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+}
+
+.notSelectPet {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  font-weight: 700;
+  color: red;
+}
+
+/* ----------------# Animaciones ------------------- */
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes flash {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* ----------------/ Animaciones ------------------- */
+
+.btnRestart {
+  padding: 13px 35px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: all .3s;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnRestart:hover {
+  background-color: #000;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .container-github, 
+  .container-linkerind {
+    margin-bottom: 10px;
+  }
+
+  .main-title {
+    margin-top: 30px;
+  }
+
+  .containerBtns {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .spanBtnFuego,
+  .spanBtnAgua,
+  .spanBtnTiera {
+    margin: 15px 0;
+  }
+}

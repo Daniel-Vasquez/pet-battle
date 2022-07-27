@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOKEPON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container-github">
+      <a class="link-github" href="#" target="_blank" title="Github">Daniel Vásquez</a>
+    </div>
+    <div class="container-linkerind">
+      <a class="link-linkerind" href="#" target="_blank" title="Linkerind">Linkerind</a>
+    </div>
+  </header>
+  <div class="containerGeneral">
+    <h1 class="main-title">MOKEPON! 🔥💧🌱</h1>
+    <h3 class="pets-title">Elige tu mascota para la batalla:</h3>
+    <section id="seleccionarMascota">
+      <div class="pets">
+        <label class="pets-pet" for="hipodoge">
+          <div class="pet-img">
+            <div class="pet-text">
+              Hipodoge
+            </div>
+            <img class="pet-img__img" src="./img/fox.png" alt="">
+          </div>
+          <input onclick="seleccionarMascotaJugador()" class="pet-input" type="radio" name="mascota" id="hipodoge" />
+        </label>
+        <label class="pets-pet" for="capipepo">
+          <div class="pet-img">
+            <div class="pet-text">
+              Capipepo
+            </div>
+            <img class="pet-img__img" src="./img/lion.png" alt="">
+          </div>
+          <input onclick="seleccionarMascotaJugador()" class="pet-input" type="radio" name="mascota" id="capipepo" />
+        </label>
+        <label class="pets-pet" for="ratigueya">
+          <div class="pet-img">
+            <div class="pet-text">
+              Ratigueya
+            </div>
+            <img class="pet-img__img" src="./img/owl.png" alt="">
+          </div>
+          <input onclick="seleccionarMascotaJugador()" class="pet-input" type="radio" name="mascota" id="ratigueya" />
+        </label>
+      </div>
+      <!-- <button class="btnPet" id="botonMascota" role="button">Seleccionar mascota</button> -->
+    </section>
+    <p id="notSelectPet" class="notSelectPet"></p>
+    <section id="seleccionarAtaque">
+      <p>
+        Tu mascota
+        <strong>
+          <span id="mascotaJugador"></span>
+        </strong>
+        tiene
+        <span id="vidasJugador">3</span>
+        vidas
+      </p>
+      <p>
+        La mascota
+        <strong>
+          <span id="mascotaEnemigo"></span>
+        </strong>
+        del enemigo tiene
+        <span id="vidasEnemigo">3</span>
+        vidas
+      </p>
+      <h2>Elige tu ataque:</h2>
+      <div class="containerBtns">
+        <span id="botonFuego" onclick="ataqueJugadorFuego()" class="spanBtnFuego"><a class="spanBtnFuego-btn"></a></span>
+        <span id="botonAgua" onclick="ataqueJugadorAgua()" class="spanBtnAgua"><a class="spanBtnAgua-btn"></a></span>
+        <span id="botonTierra" onclick="ataqueJugadorTierra()" class="spanBtnTiera"><a class="spanBtnTiera-btn"></a></span>
+      </div>
+    </section>
+    <section id="mensajes">
+    </section>
+    <section id="reiniciar">
+      <button class="btnRestart" id="botonReiniciar" onclick="reiniciarJuego()">Reiniciar</button>
+    </section>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
