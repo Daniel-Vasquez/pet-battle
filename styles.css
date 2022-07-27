@@ -395,6 +395,7 @@ body {
 @media screen and (max-width: 500px) {
   .header {
     flex-direction: column;
+    height: auto;
   }
 
   .container-github, 
