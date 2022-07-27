@@ -137,6 +137,7 @@ body {
   height: 40px;
   margin: 0 15px;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .spanBtnFuego .spanBtnFuego-btn {
@@ -196,6 +197,7 @@ body {
   height: 40px;
   margin: 0 15px;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .spanBtnAgua .spanBtnAgua-btn {
@@ -255,6 +257,7 @@ body {
   height: 40px;
   margin: 0 15px;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .spanBtnTiera .spanBtnTiera-btn {
