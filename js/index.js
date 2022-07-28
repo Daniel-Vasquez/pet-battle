@@ -5,6 +5,9 @@ const spanMascotaJugador = document.getElementById("mascotaJugador");
 const spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
 const mensajes = document.getElementById("mensajes");
 
+const containerseleccionarMascota = document.getElementById("seleccionarMascota");
+const containerSeleccionarAtaque = document.getElementById("seleccionarAtaque");
+
 const petChosenEnemy = document.getElementById("petChosenEnemy");
 const namePetEnemy = document.getElementById("namePetEnemy");
 
@@ -15,6 +18,8 @@ const spanVidasEnemigo = document.getElementById("vidasEnemigo");
 const botonFuego = document.getElementById("botonFuego");
 const botonAgua = document.getElementById("botonAgua");
 const botonTierra = document.getElementById("botonTierra");
+
+const botonReiniciar = document.getElementById("botonReiniciar");
 
 const notSelectPet = document.getElementById("notSelectPet");
 
@@ -42,6 +47,7 @@ function useScrollToTop() {
 
 function crearMensaje(msg) {
   const p = document.createElement("p");
+  const text = document.createElement("span")
 
   p.innerHTML = `
     Tu mascota atacó con <strong>${ataqueJugador}</strong>, 
@@ -49,14 +55,21 @@ function crearMensaje(msg) {
     <strong>${msg}</strong> 
   `;
 
-  mensajes.appendChild(p)
+  p.classList = "resultsBattle-text"
+
+  text.innerHTML = "Elige otro ataque."
+  text.className = "resultsBattle-span"
+
+  mensajes.append(p, text)
 }
 
 function msgFinally() {
   if (vidasTotalJugador === 0) {
     mensajes.innerHTML = `<h2>Perdiste el juego.</h2>`
+    botonReiniciar.style.display = "inline"
   } else if (vidasTotalEnemigo === 0) {
     mensajes.innerHTML = `<h2>Ganaste el juego.</h2>`
+    botonReiniciar.style.display = "inline"
   }
 }
 
@@ -182,10 +195,14 @@ function seleccionarMascotaJugador() {
   }
 
   petChosenEnemy.innerHTML = ""
+  containerseleccionarMascota.classList.add("fadeOutUpBig")
+  containerseleccionarMascota.style.height = "0px"
+  containerSeleccionarAtaque.style.display = "inline-block"
   seleccionarMascotaEnemigo();
 }
 
 function reiniciarJuego() {
+  containerSeleccionarAtaque.innerHTML = ""
   useScrollToTop()
   location.reload() 
 }

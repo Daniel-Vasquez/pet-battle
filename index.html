@@ -26,8 +26,8 @@
   </header>
   <div class="containerGeneral">
     <h1 class="main-title">MOKEPON! 🔥💧🌱</h1>
-    <h3 class="pets-title">Elige a tu mascota para la batalla:</h3>
     <section id="seleccionarMascota">
+      <h3 class="pets-title">Elige a tu mascota para la batalla:</h3>
       <div class="pets">
         <label class="pets-pet" for="hipodoge">
           <div class="pet-img">
@@ -93,11 +93,10 @@
         <span id="botonAgua" onclick="ataqueJugadorAgua()" class="spanBtnAgua"><a class="spanBtnAgua-btn"></a></span>
         <span id="botonTierra" onclick="ataqueJugadorTierra()" class="spanBtnTiera"><a class="spanBtnTiera-btn"></a></span>
       </div>
-    </section>
-    <section id="mensajes" class="resultsBattle">
-    </section>
-    <section class="containerBtnRestart" id="reiniciar">
-      <button class="btnRestart" id="botonReiniciar" onclick="reiniciarJuego()">Reiniciar</button>
+      <div id="mensajes" class="resultsBattle"></div>
+      <div class="containerBtnRestart" id="reiniciar">
+        <button class="btnRestart" id="botonReiniciar" onclick="reiniciarJuego()">Reiniciar</button>
+      </div>
     </section>
   </div>
   <script src="./js/index.js"></script>

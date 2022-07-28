@@ -345,16 +345,28 @@ body {
 }
 
 .seleccionarAtaque {
-  display: inline-block;
+  /* display: inline-block; */
+  display: none;
   border-radius: 10px;
   margin-bottom: 20px;
-  padding: 7px;
+  padding: 15px;
   box-shadow: 0 0 5px 0 #00000063;
 }
 
 .resultsBattle {
-  padding: 10px 0 35px 0;
+  padding: 10px 0;
 }
+
+.resultsBattle-text {
+  margin: 5px 0;
+}
+
+.resultsBattle-span {
+  color: #e91d63;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 /* ----------------# Animaciones ------------------- */
 
 .flash {
@@ -394,6 +406,44 @@ body {
   }
 }
 
+
+
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
+
+
 /* ----------------/ Animaciones ------------------- */
 
 .containerBtnRestart {
@@ -401,6 +451,7 @@ body {
 }
 
 .btnRestart {
+  display: none;
   padding: 13px 35px;
   background-color: transparent;
   border: 1px solid black;
@@ -421,7 +472,7 @@ body {
     height: auto;
   }
 
-  .container-github, 
+  .container-github,
   .container-linkerind {
     margin-bottom: 10px;
   }
@@ -442,7 +493,7 @@ body {
   .pet-img__img {
     width: 60px;
   }
-  
+
 
   .containerBtns {
     flex-direction: column;
