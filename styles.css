@@ -72,7 +72,7 @@ body {
 .pets {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .pets-pet {
@@ -421,6 +421,20 @@ body {
   .main-title {
     margin-top: 30px;
   }
+
+  .pets-pet {
+    margin-right: 0px;
+  }
+
+  .pets-pet:focus-within {
+    border-color: transparent;
+    transform: none;
+  }
+
+  .pet-img__img {
+    width: 60px;
+  }
+  
 
   .containerBtns {
     flex-direction: column;
