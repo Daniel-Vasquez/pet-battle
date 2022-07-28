@@ -118,6 +118,10 @@ body {
   margin: 0 auto;
 }
 
+.petChosenEnemy {
+  min-height: 50px;
+}
+
 .pet-input {
   -webkit-appearance: none;
   -moz-appearance: none;

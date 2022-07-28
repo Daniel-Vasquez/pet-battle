@@ -125,14 +125,17 @@ function ataqueJugadorTierra() {
 }
 
 function printImgEnemigo(id) {
+  const img = document.createElement('img');
+  const text = document.createElement("h3")
+  
+  text.innerHTML = "El enemigo eligió a la mascosa:"
   const indexImg = imgEnemigo[id]
 
-  const img = document.createElement('img');
 
   img.src = `${indexImg}`
   img.className = "petChosenEnemy-img"
 
-  petChosenEnemy.append(img)
+  petChosenEnemy.append(text, img)
 }
 
 function seleccionarMascotaEnemigo() {
