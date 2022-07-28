@@ -119,6 +119,10 @@ body {
 }
 
 .petChosenEnemy {
+  display: grid;
+  grid-template: 1fr / auto auto;
+  gap: 25px;
+  justify-content: center;
   min-height: 50px;
 }
 

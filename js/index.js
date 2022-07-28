@@ -8,6 +8,9 @@ const mensajes = document.getElementById("mensajes");
 const containerseleccionarMascota = document.getElementById("seleccionarMascota");
 const containerSeleccionarAtaque = document.getElementById("seleccionarAtaque");
 
+const petChosenPlayer = document.getElementById("petChosenPlayer");
+const namePetPlayer = document.getElementById("namePetPlayer");
+
 const petChosenEnemy = document.getElementById("petChosenEnemy");
 const namePetEnemy = document.getElementById("namePetEnemy");
 
@@ -144,9 +147,24 @@ function ataqueJugadorTierra() {
   selectAtaqueEnemigo();
 }
 
+
+function printImgJugador(id) {
+  const img = document.createElement('img');
+  const text = document.createElement("p")
+  
+  text.innerHTML = "Tu mascosa que eligiste fue:"
+  const indexImg = imgEnemigo[id]
+
+
+  img.src = `${indexImg}`
+  img.className = "petChosenEnemy-img"
+
+  petChosenPlayer.append(text, img)
+}
+
 function printImgEnemigo(id) {
   const img = document.createElement('img');
-  const text = document.createElement("h3")
+  const text = document.createElement("p")
   
   text.innerHTML = "El enemigo eligió a la mascosa:"
   const indexImg = imgEnemigo[id]
@@ -188,10 +206,16 @@ function seleccionarMascotaJugador() {
 
   if (inputHipodoge.checked) {
     spanMascotaJugador.innerHTML = "Hipodoge";
+    namePetPlayer.innerHTML = "Hipodoge";
+    printImgJugador(0)
   } else if (inputCapipepo.checked) {
     spanMascotaJugador.innerHTML = "Capipepo";
+    namePetPlayer.innerHTML = "Capipepo";
+    printImgJugador(1)
   } else if (inputRatigueya.checked) {
     spanMascotaJugador.innerHTML = "Ratigueya";
+    namePetPlayer.innerHTML = "Ratigueya";
+    printImgJugador(2)
   }
 
   petChosenEnemy.innerHTML = ""
