@@ -351,6 +351,10 @@ body {
   padding: 7px;
   box-shadow: 0 0 5px 0 #00000063;
 }
+
+.resultsBattle {
+  padding: 10px 0 35px 0;
+}
 /* ----------------# Animaciones ------------------- */
 
 .flash {

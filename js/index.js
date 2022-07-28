@@ -45,10 +45,19 @@ function crearMensaje(msg) {
 
   p.innerHTML = `
     Tu mascota atacó con <strong>${ataqueJugador}</strong>, 
-    la mascota del enemigo atacó con <strong>${ataqueEnemigo}</strong> - <strong>${msg}</strong> 
+    la mascota del enemigo atacó con <strong>${ataqueEnemigo}</strong> - 
+    <strong>${msg}</strong> 
   `;
 
   mensajes.appendChild(p)
+}
+
+function msgFinally() {
+  if (vidasTotalJugador === 0) {
+    mensajes.innerHTML = `<h2>Perdiste el juego.</h2>`
+  } else if (vidasTotalEnemigo === 0) {
+    mensajes.innerHTML = `<h2>Ganaste el juego.</h2>`
+  }
 }
 
 function combareResultado() {
@@ -57,33 +66,28 @@ function combareResultado() {
   } else if (ataqueJugador === "Fuego" && ataqueEnemigo === "Tierra") {
     vidasTotalEnemigo -= 1
     crearMensaje("Ganaste")
-    spanVidasJugador.innerHTML = vidasTotalJugador
     spanVidasEnemigo.innerHTML = vidasTotalEnemigo
   } else if (ataqueJugador === "Agua" && ataqueEnemigo === "Fuego") {
     vidasTotalEnemigo -= 1
     crearMensaje("Ganaste")
-    spanVidasJugador.innerHTML = vidasTotalJugador
     spanVidasEnemigo.innerHTML = vidasTotalEnemigo
   } else if (ataqueJugador === "Tierra" && ataqueEnemigo === "Agua") {
     vidasTotalEnemigo -= 1
     crearMensaje("Ganaste")
-    spanVidasJugador.innerHTML = vidasTotalJugador
     spanVidasEnemigo.innerHTML = vidasTotalEnemigo
   } else {
     vidasTotalJugador -= 1
     crearMensaje("Perdiste")
     spanVidasJugador.innerHTML = vidasTotalJugador
-    spanVidasEnemigo.innerHTML = vidasTotalEnemigo
   }
-
-
-  console.log({ vidasTotalJugador, vidasTotalEnemigo })
 
   if (vidasTotalJugador === 0 || vidasTotalEnemigo === 0) {
     botonFuego.style = "pointer-events: none; opacity: 0.7;"
     botonAgua.style = "pointer-events: none; opacity: 0.7;"
     botonTierra.style = "pointer-events: none; opacity: 0.7;"
   }
+
+  msgFinally()
 }
 
 function selectAtaqueEnemigo() {
@@ -111,16 +115,19 @@ function selectAtaqueEnemigo() {
 
 function ataqueJugadorFuego() {
   ataqueJugador = "Fuego";
+  mensajes.innerHTML = ""
   selectAtaqueEnemigo();
 }
 
 function ataqueJugadorAgua() {
   ataqueJugador = "Agua";
+  mensajes.innerHTML = ""
   selectAtaqueEnemigo();
 }
 
 function ataqueJugadorTierra() {
   ataqueJugador = "Tierra";
+  mensajes.innerHTML = ""
   selectAtaqueEnemigo();
 }
 
