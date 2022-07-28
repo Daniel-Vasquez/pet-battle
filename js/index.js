@@ -26,9 +26,9 @@ let vidasTotalEnemigo = 3
 
 
 const imgEnemigo = [
-  "../img/fox.png",
-  "../img/lion.png",
-  "../img/owl.png"
+  "fox.png",
+  "lion.png",
+  "owl.png"
 ]
 
 function aleatorio(min, max) {
