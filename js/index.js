@@ -5,6 +5,9 @@ const spanMascotaJugador = document.getElementById("mascotaJugador");
 const spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
 const mensajes = document.getElementById("mensajes");
 
+const petChosenEnemy = document.getElementById("petChosenEnemy");
+const namePetEnemy = document.getElementById("namePetEnemy");
+
 const spanVidasJugador = document.getElementById("vidasJugador");
 const spanVidasEnemigo = document.getElementById("vidasEnemigo");
 
@@ -21,9 +24,21 @@ let ataqueEnemigo = "";
 let vidasTotalJugador = 3
 let vidasTotalEnemigo = 3
 
+
+const imgEnemigo = [
+  "../img/fox.png",
+  "../img/lion.png",
+  "../img/owl.png"
+]
+
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+function useScrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 
 function crearMensaje(msg) {
   const p = document.createElement("p");
@@ -109,17 +124,38 @@ function ataqueJugadorTierra() {
   selectAtaqueEnemigo();
 }
 
+function printImgEnemigo(id) {
+  const indexImg = imgEnemigo[id]
+  console.log({indexImg})
+  const img = document.createElement('img');
+  console.log({img})
+
+  img.src = `${indexImg}`
+  img.className = "petChosenEnemy-img"
+
+  console.log({img})
+
+  petChosenEnemy.append(img)
+}
+
 function seleccionarMascotaEnemigo() {
   const mascotaEnemigo = aleatorio(1, 3);
 
   if (mascotaEnemigo === 1) {
     spanMascotaEnemigo.innerHTML = "Hipodoge";
+    namePetEnemy.innerHTML = "Hipodoge";
+    printImgEnemigo(0)
   } else if (mascotaEnemigo === 2) {
     spanMascotaEnemigo.innerHTML = "Capipepo";
+    namePetEnemy.innerHTML = "Capipepo";
+    printImgEnemigo(1)
   } else {
-    spanMascotaEnemigo.innerHTML = "Ratigueya";
+    spanMascotaEnemigo.innerHTML = "Ratigueya"
+    namePetEnemy.innerHTML = "Ratigueya";
+    printImgEnemigo(2)
   }
 }
+
 
 function seleccionarMascotaJugador() {
   // hipodoge.checked
@@ -138,9 +174,12 @@ function seleccionarMascotaJugador() {
     spanMascotaJugador.innerHTML = "Ratigueya";
   }
 
+  petChosenEnemy.innerHTML = ""
   seleccionarMascotaEnemigo();
+
 }
 
 function reiniciarJuego() {
+  useScrollToTop()
   location.reload() 
 }

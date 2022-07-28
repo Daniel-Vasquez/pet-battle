@@ -314,6 +314,11 @@ body {
 
 /* --------------------/ Botones ------------------- */
 
+.petChosenEnemy-img {
+  width: 80px;
+  margin: 0 auto;
+}
+
 .containerBtns {
   display: flex;
   justify-content: center;
@@ -327,11 +332,17 @@ body {
   animation-duration: 4s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-
   font-weight: 700;
   color: red;
 }
 
+.seleccionarAtaque {
+  display: inline-block;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 7px;
+  box-shadow: 0 0 5px 0 #00000063;
+}
 /* ----------------# Animaciones ------------------- */
 
 .flash {

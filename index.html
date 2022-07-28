@@ -26,7 +26,7 @@
   </header>
   <div class="containerGeneral">
     <h1 class="main-title">MOKEPON! 🔥💧🌱</h1>
-    <h3 class="pets-title">Elige tu mascota para la batalla:</h3>
+    <h3 class="pets-title">Elige a tu mascota para la batalla:</h3>
     <section id="seleccionarMascota">
       <div class="pets">
         <label class="pets-pet" for="hipodoge">
@@ -59,15 +59,22 @@
       </div>
       <!-- <button class="btnPet" id="botonMascota" role="button">Seleccionar mascota</button> -->
     </section>
+    <section>
+      <h3>El enemigo eligió a la mascosa:</h3>
+      <div id="petChosenEnemy"></div>
+      <p><strong id="namePetEnemy"></strong></p>
+    </section>
     <p id="notSelectPet" class="notSelectPet"></p>
-    <section id="seleccionarAtaque">
+    <section id="seleccionarAtaque" class="seleccionarAtaque">
       <p>
         Tu mascota
         <strong>
           <span id="mascotaJugador"></span>
         </strong>
         tiene
-        <span id="vidasJugador">3</span>
+        <strong>
+          <span id="vidasJugador">3</span>
+        </strong>
         vidas
       </p>
       <p>
@@ -76,7 +83,9 @@
           <span id="mascotaEnemigo"></span>
         </strong>
         del enemigo tiene
-        <span id="vidasEnemigo">3</span>
+        <strong>
+          <span id="vidasEnemigo">3</span>
+        </strong>
         vidas
       </p>
       <h2>Elige tu ataque:</h2>
