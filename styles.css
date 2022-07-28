@@ -87,6 +87,10 @@ body {
   border-radius: 5px;
 }
 
+.pets-pet:last-child {
+  margin-right: 0px;
+}
+
 .pets-pet:hover {
   transform: scale(.80);
 }

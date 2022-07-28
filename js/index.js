@@ -126,14 +126,11 @@ function ataqueJugadorTierra() {
 
 function printImgEnemigo(id) {
   const indexImg = imgEnemigo[id]
-  console.log({indexImg})
+
   const img = document.createElement('img');
-  console.log({img})
 
   img.src = `${indexImg}`
   img.className = "petChosenEnemy-img"
-
-  console.log({img})
 
   petChosenEnemy.append(img)
 }
@@ -176,7 +173,6 @@ function seleccionarMascotaJugador() {
 
   petChosenEnemy.innerHTML = ""
   seleccionarMascotaEnemigo();
-
 }
 
 function reiniciarJuego() {
