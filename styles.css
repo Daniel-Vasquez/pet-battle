@@ -72,7 +72,6 @@ body {
 .pets {
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
 }
 
 .pets-pet {
@@ -81,9 +80,9 @@ body {
   justify-content: center;
   margin-right: 30px;
   margin-bottom: 10px;
-  transition: all .3s;
+  transition: all .4s;
   padding: 10px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -93,7 +92,8 @@ body {
 }
 
 .pets-pet:hover {
-  transform: scale(.80);
+  border-color: #e91e63;
+  transform: scale(1.199);
 }
 
 
@@ -101,11 +101,6 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-}
-
-.pets-pet:focus-within {
-  border-color: black;
-  transform: scale(1.2);
 }
 
 .pet-text {
@@ -119,24 +114,23 @@ body {
   margin: 0 auto;
 }
 
-.petChosenEnemy {
+.petsChosen {
   display: grid;
   grid-template: 1fr / auto auto;
-  gap: 25px;
-  justify-content: center;
-  min-height: 50px;
+  justify-content: space-around;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.petsChosen-pet {
+  max-width: 220px;
+  min-width: 200px;
+  width: 100%;
 }
 
 .pet-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #999;
-  transition: 0.2s all linear;
-  margin: 0 auto;
+  display: none;
 }
 
 
@@ -206,7 +200,6 @@ body {
 }
 
 /* Btn Agua */
-
 .spanBtnAgua {
   display: inline-flex;
   width: 100px;
@@ -266,7 +259,6 @@ body {
 }
 
 /* Btn Tierra */
-
 .spanBtnTiera {
   display: inline-flex;
   width: 100px;
@@ -351,6 +343,8 @@ body {
 
 .seleccionarAtaque {
   display: none;
+  max-width: 450px;
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 15px;
@@ -372,7 +366,6 @@ body {
 }
 
 /* ----------------# Animaciones ------------------- */
-
 .flash {
   -webkit-animation-name: flash;
   animation-name: flash;
@@ -410,14 +403,11 @@ body {
   }
 }
 
-
-
-
 .fadeOutUpBig {
   -webkit-animation-name: fadeOutUpBig;
   animation-name: fadeOutUpBig;
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -445,8 +435,6 @@ body {
     transform: translate3d(0, -2000px, 0);
   }
 }
-
-
 
 /* ----------------/ Animaciones ------------------- */
 
@@ -497,6 +485,11 @@ body {
   .pet-img__img {
     width: 60px;
   }
+
+  .petsChosen-pet {
+    min-width: 120px;
+  }
+  
 
   .seleccionarAtaque {
     box-shadow: none;

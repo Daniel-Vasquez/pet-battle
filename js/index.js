@@ -1,8 +1,6 @@
 const inputHipodoge = document.getElementById("hipodoge");
 const inputCapipepo = document.getElementById("capipepo");
 const inputRatigueya = document.getElementById("ratigueya");
-const spanMascotaJugador = document.getElementById("mascotaJugador");
-const spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
 const mensajes = document.getElementById("mensajes");
 
 const containerseleccionarMascota = document.getElementById("seleccionarMascota");
@@ -17,15 +15,11 @@ const namePetEnemy = document.getElementById("namePetEnemy");
 const spanVidasJugador = document.getElementById("vidasJugador");
 const spanVidasEnemigo = document.getElementById("vidasEnemigo");
 
-
 const botonFuego = document.getElementById("botonFuego");
 const botonAgua = document.getElementById("botonAgua");
 const botonTierra = document.getElementById("botonTierra");
 
 const botonReiniciar = document.getElementById("botonReiniciar");
-
-const notSelectPet = document.getElementById("notSelectPet");
-
 
 let ataqueJugador = "";
 let ataqueEnemigo = "";
@@ -54,8 +48,8 @@ function crearMensaje(msg) {
 
   p.innerHTML = `
     Tu mascota atacó con <strong>${ataqueJugador}</strong>, 
-    la mascota del enemigo atacó con <strong>${ataqueEnemigo}</strong> - 
-    <strong>${msg}</strong> 
+    la mascota del enemigo atacó con <strong>${ataqueEnemigo}</strong>.
+    <p><strong>${msg}</strong></p>
   `;
 
   p.classList = "resultsBattle-text"
@@ -117,16 +111,7 @@ function selectAtaqueEnemigo() {
     ataqueEnemigo = "Tierra";
   }
 
-  if (
-    inputHipodoge.checked ||
-    inputCapipepo.checked ||
-    inputRatigueya.checked
-  ) {
-    combareResultado()
-    notSelectPet.innerHTML = ""
-  } else {
-    notSelectPet.innerHTML = "SELECCIONA A UNA MASCOTA"
-  }
+  combareResultado()
 }
 
 function ataqueJugadorFuego() {
@@ -147,50 +132,30 @@ function ataqueJugadorTierra() {
   selectAtaqueEnemigo();
 }
 
-
-function printImgJugador(id) {
+function printImgPlayers(id, msg, container) {
   const img = document.createElement('img');
   const text = document.createElement("p")
   
-  text.innerHTML = "Tu mascosa que eligiste fue:"
-  const indexImg = imgEnemigo[id]
+  text.innerHTML = msg
 
-
-  img.src = `${indexImg}`
+  img.src = `${imgEnemigo[id]}`
   img.className = "petChosenEnemy-img"
 
-  petChosenPlayer.append(text, img)
-}
-
-function printImgEnemigo(id) {
-  const img = document.createElement('img');
-  const text = document.createElement("p")
-  
-  text.innerHTML = "El enemigo eligió a la mascosa:"
-  const indexImg = imgEnemigo[id]
-
-
-  img.src = `${indexImg}`
-  img.className = "petChosenEnemy-img"
-
-  petChosenEnemy.append(text, img)
+  container.append(text, img)
 }
 
 function seleccionarMascotaEnemigo() {
   const mascotaEnemigo = aleatorio(1, 3);
 
   if (mascotaEnemigo === 1) {
-    spanMascotaEnemigo.innerHTML = "Hipodoge";
     namePetEnemy.innerHTML = "Hipodoge";
-    printImgEnemigo(0)
+    printImgPlayers(0, `Mascota del <strong>enemigo</strong>`, petChosenEnemy)
   } else if (mascotaEnemigo === 2) {
-    spanMascotaEnemigo.innerHTML = "Capipepo";
     namePetEnemy.innerHTML = "Capipepo";
-    printImgEnemigo(1)
+    printImgPlayers(1, `Mascota del <strong>enemigo</strong>`, petChosenEnemy)
   } else {
-    spanMascotaEnemigo.innerHTML = "Ratigueya"
     namePetEnemy.innerHTML = "Ratigueya";
-    printImgEnemigo(2)
+    printImgPlayers(2, `Mascota del <strong>enemigo</strong>`, petChosenEnemy)
   }
 }
 
@@ -205,17 +170,14 @@ function seleccionarMascotaJugador() {
   //   : alert("Seleccionaste una mascota")
 
   if (inputHipodoge.checked) {
-    spanMascotaJugador.innerHTML = "Hipodoge";
     namePetPlayer.innerHTML = "Hipodoge";
-    printImgJugador(0)
+    printImgPlayers(0, "Mascota es:", petChosenPlayer)
   } else if (inputCapipepo.checked) {
-    spanMascotaJugador.innerHTML = "Capipepo";
     namePetPlayer.innerHTML = "Capipepo";
-    printImgJugador(1)
+    printImgPlayers(1, "Mascota es:", petChosenPlayer)
   } else if (inputRatigueya.checked) {
-    spanMascotaJugador.innerHTML = "Ratigueya";
     namePetPlayer.innerHTML = "Ratigueya";
-    printImgJugador(2)
+    printImgPlayers(2, "Mascota es:", petChosenPlayer)
   }
 
   petChosenEnemy.innerHTML = ""
