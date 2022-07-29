@@ -322,6 +322,7 @@ body {
 .petChosenEnemy-img {
   width: 80px;
   margin: 0 auto;
+  transition: all .3s;
 }
 
 .containerBtns {

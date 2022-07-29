@@ -61,10 +61,17 @@ function crearMensaje(msg) {
 }
 
 function msgFinally() {
+  const imgs = document.getElementsByClassName("petChosenEnemy-img")
+
+  const imgUsuario = imgs[0]
+  const imgEnemy = imgs[1]
+
   if (vidasTotalJugador === 0) {
+    imgUsuario.style.transform = "rotate(90deg)"
     mensajes.innerHTML = `<h2>Perdiste el juego.</h2>`
     botonReiniciar.style.display = "inline"
   } else if (vidasTotalEnemigo === 0) {
+    imgEnemy.style.transform = "rotate(90deg)"
     mensajes.innerHTML = `<h2>Ganaste el juego.</h2>`
     botonReiniciar.style.display = "inline"
   }
@@ -149,13 +156,13 @@ function seleccionarMascotaEnemigo() {
 
   if (mascotaEnemigo === 1) {
     namePetEnemy.innerHTML = "Hipodoge";
-    printImgPlayers(0, `Mascota del <strong>enemigo</strong>`, petChosenEnemy)
+    printImgPlayers(0, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
   } else if (mascotaEnemigo === 2) {
     namePetEnemy.innerHTML = "Capipepo";
-    printImgPlayers(1, `Mascota del <strong>enemigo</strong>`, petChosenEnemy)
+    printImgPlayers(1, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
   } else {
     namePetEnemy.innerHTML = "Ratigueya";
-    printImgPlayers(2, `Mascota del <strong>enemigo</strong>`, petChosenEnemy)
+    printImgPlayers(2, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
   }
 }
 
@@ -171,13 +178,13 @@ function seleccionarMascotaJugador() {
 
   if (inputHipodoge.checked) {
     namePetPlayer.innerHTML = "Hipodoge";
-    printImgPlayers(0, "Mascota es:", petChosenPlayer)
+    printImgPlayers(0, "Tu mascota:", petChosenPlayer)
   } else if (inputCapipepo.checked) {
     namePetPlayer.innerHTML = "Capipepo";
-    printImgPlayers(1, "Mascota es:", petChosenPlayer)
+    printImgPlayers(1, "Tu mascota:", petChosenPlayer)
   } else if (inputRatigueya.checked) {
     namePetPlayer.innerHTML = "Ratigueya";
-    printImgPlayers(2, "Mascota es:", petChosenPlayer)
+    printImgPlayers(2, "Tu mascota:", petChosenPlayer)
   }
 
   petChosenEnemy.innerHTML = ""
