@@ -72,16 +72,19 @@ body {
 .pets {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .pets-pet {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 30px;
-  margin-bottom: 10px;
+  margin: 12px;
   transition: all .4s;
-  padding: 10px;
+  padding: 20px;
   border: 2px solid transparent;
   border-radius: 5px;
   cursor: pointer;

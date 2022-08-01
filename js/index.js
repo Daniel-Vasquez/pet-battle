@@ -1,6 +1,10 @@
 const inputHipodoge = document.getElementById("hipodoge");
 const inputCapipepo = document.getElementById("capipepo");
 const inputRatigueya = document.getElementById("ratigueya");
+const inputPydos = document.getElementById("pydos");
+const inputTucapalma = document.getElementById("tucapalma");
+const inputFingetelvis = document.getElementById("fingetelvis");
+
 const mensajes = document.getElementById("mensajes");
 
 const containerseleccionarMascota = document.getElementById("seleccionarMascota");
@@ -27,10 +31,13 @@ let vidasTotalJugador = 3
 let vidasTotalEnemigo = 3
 
 
-const imgEnemigo = [
+const petImages = [
   "fox.png",
   "lion.png",
-  "owl.png"
+  "owl.png",
+  "koala.png",
+  "octopus.png",
+  "crab.png"
 ]
 
 function aleatorio(min, max) {
@@ -145,14 +152,29 @@ function printImgPlayers(id, msg, container) {
   
   text.innerHTML = msg
 
-  img.src = `${imgEnemigo[id]}`
+  img.src = `${petImages[id]}`
   img.className = "petChosenEnemy-img"
 
   container.append(text, img)
 }
 
+// const ENEMIES = {
+//   pydos: {
+//     name: "Pydos",
+//     imagen: "koala.png"
+//   },
+//   ratigueya: {
+//     name: "Ratigueya",
+//     imagen: "koala.png"
+//   }
+// }
+
+// const ENEMY_NAMES = Object.keys(ENEMIES)
+// console.log({ENEMY_NAMES})
+
 function seleccionarMascotaEnemigo() {
-  const mascotaEnemigo = aleatorio(1, 3);
+  // const mascotaEnemigo = aleatorio(1, ENEMY_NAMES.length);
+  const mascotaEnemigo = aleatorio(1, 6);
 
   if (mascotaEnemigo === 1) {
     namePetEnemy.innerHTML = "Hipodoge";
@@ -160,9 +182,18 @@ function seleccionarMascotaEnemigo() {
   } else if (mascotaEnemigo === 2) {
     namePetEnemy.innerHTML = "Capipepo";
     printImgPlayers(1, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
-  } else {
+  } else if ((mascotaEnemigo === 3)) {
     namePetEnemy.innerHTML = "Ratigueya";
     printImgPlayers(2, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
+  } else if ((mascotaEnemigo === 4)) {
+    namePetEnemy.innerHTML = "Pydos";
+    printImgPlayers(3, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
+  } else if ((mascotaEnemigo === 5)) {
+    namePetEnemy.innerHTML = "Tucapalma";
+    printImgPlayers(4, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
+  } else if ((mascotaEnemigo === 6)) {
+    namePetEnemy.innerHTML = "Fingetelvis";
+    printImgPlayers(5, `Mascota del <strong>enemigo</strong>:`, petChosenEnemy)
   }
 }
 
@@ -185,6 +216,15 @@ function seleccionarMascotaJugador() {
   } else if (inputRatigueya.checked) {
     namePetPlayer.innerHTML = "Ratigueya";
     printImgPlayers(2, "Tu mascota:", petChosenPlayer)
+  } else if (inputPydos.checked) {
+    namePetPlayer.innerHTML = "Pydos";
+    printImgPlayers(3, "Tu mascota:", petChosenPlayer)
+  } else if (inputTucapalma.checked) {
+    namePetPlayer.innerHTML = "Tucapalma";
+    printImgPlayers(4, "Tu mascota:", petChosenPlayer)
+  } else if (inputFingetelvis.checked) {
+    namePetPlayer.innerHTML = "Fingetelvis";
+    printImgPlayers(5, "Tu mascota:", petChosenPlayer)
   }
 
   petChosenEnemy.innerHTML = ""
