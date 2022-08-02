@@ -69,7 +69,9 @@ body {
 }
 
 .pets {
-  display: flex;
+  display: grid;
+  grid-template: auto / auto auto auto;
+  gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 600px;
@@ -81,7 +83,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 12px;
   transition: all .4s;
   padding: 20px;
   border: 2px solid transparent;
@@ -361,7 +362,7 @@ body {
 
 .playersLives-player,
 .playersLives-enemy {
-  width: 40%;
+  width: 35%;
   border-radius: 20px;
   padding: 15px 10px;
   background-color: #ffffffb8;
@@ -497,8 +498,8 @@ body {
     margin-bottom: 10px;
   }
 
-  .pets-pet {
-    margin-right: 0px;
+  .pets {
+    grid-template: auto / auto auto;
   }
 
   .pets-pet:focus-within {
@@ -517,6 +518,15 @@ body {
 
   .selectAttack {
     box-shadow: none;
+  }
+
+  .playersLives {
+    gap: 10px;
+  }
+
+  .playersLives-player,
+  .playersLives-enemy {
+    width: 50%;
   }
 
   .containerBtns {
