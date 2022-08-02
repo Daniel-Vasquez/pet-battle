@@ -50,21 +50,21 @@ function useScrollToTop() {
 
 
 function crearMensaje(msg) {
-  const p = document.createElement("p");
+  const textMsg = document.createElement("p");
   const text = document.createElement("span")
 
-  p.innerHTML = `
+  textMsg.innerHTML = `
     Tu mascota atacó con <strong>${ataqueJugador}</strong>, 
     la mascota del enemigo atacó con <strong>${ataqueEnemigo}</strong>.
-    <p><strong>${msg}</strong></p>
+    <h3><strong>${msg}</strong></h3>
   `;
 
-  p.classList = "resultsBattle-text"
+  textMsg.classList = "resultsBattle-text"
 
   text.innerHTML = "Elige otro ataque."
   text.className = "resultsBattle-span"
 
-  mensajes.append(p, text)
+  mensajes.append(textMsg, text)
 }
 
 function msgFinally() {
@@ -229,7 +229,7 @@ function seleccionarMascotaJugador() {
 
   petChosenEnemy.innerHTML = ""
   containerseleccionarMascota.classList.add("fadeOutUpBig")
-  containerseleccionarMascota.style.height = "0px"
+  containerseleccionarMascota.style = "display: flex; height: 0px;"
   containerSeleccionarAtaque.style.display = "inline-block"
   seleccionarMascotaEnemigo();
 }
