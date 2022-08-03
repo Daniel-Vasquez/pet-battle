@@ -195,7 +195,7 @@ body {
 
 .spanBtnFuego .spanBtnFuego-btn:after {
   color: #000;
-  transform: rotateX(90deg) translateZ(17px);
+  transform: rotateX(90deg) translateZ(18px);
 }
 
 .spanBtnFuego .spanBtnFuego-btn:hover {
@@ -253,7 +253,7 @@ body {
 
 .spanBtnAgua .spanBtnAgua-btn:after {
   color: #000;
-  transform: rotateX(90deg) translateZ(17px);
+  transform: rotateX(90deg) translateZ(18px);
 }
 
 .spanBtnAgua .spanBtnAgua-btn:hover {
@@ -311,7 +311,7 @@ body {
 
 .spanBtnTiera .spanBtnTiera-btn:after {
   color: #000;
-  transform: rotateX(90deg) translateZ(17px);
+  transform: rotateX(90deg) translateZ(18px);
 }
 
 .spanBtnTiera .spanBtnTiera-btn:hover {
