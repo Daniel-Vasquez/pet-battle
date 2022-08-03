@@ -56,7 +56,7 @@ function crearMensaje(msg) {
   textMsg.innerHTML = `
     Tu mascota atacó con <strong>${ataqueJugador}</strong>, 
     la mascota del enemigo atacó con <strong>${ataqueEnemigo}</strong>.
-    <h3><strong>${msg}</strong></h3>
+    <h3 class="text-without-margin"><strong>${msg}</strong></h3>
   `;
 
   textMsg.classList = "resultsBattle-text"
@@ -229,7 +229,7 @@ function seleccionarMascotaJugador() {
 
   petChosenEnemy.innerHTML = ""
   containerseleccionarMascota.classList.add("fadeOutUpBig")
-  containerseleccionarMascota.style = "display: flex; height: 0px;"
+  containerseleccionarMascota.style = "display: flex; flex-direction: column; height: 0px;"
   containerSeleccionarAtaque.style.display = "inline-block"
   seleccionarMascotaEnemigo();
 }

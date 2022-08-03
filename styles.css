@@ -11,6 +11,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.text-without-margin {
+  margin: 5px 0;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -119,16 +123,13 @@ body {
 
 .petsChosen {
   display: grid;
-  grid-template: 1fr / auto auto;
-  justify-content: space-around;
-  max-width: 450px;
+  grid-template: 1fr / 1fr 1fr;
+  align-items: flex-end;
   width: 100%;
   margin: 0 auto;
 }
 
 .petsChosen-pet {
-  max-width: 220px;
-  min-width: 200px;
   width: 100%;
 }
 
@@ -146,9 +147,8 @@ body {
 /* Btn Fuego */
 .spanBtnFuego {
   display: inline-flex;
-  width: 100px;
+  width: 80px;
   height: 40px;
-  margin: 0 15px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -164,7 +164,7 @@ body {
 .spanBtnFuego .spanBtnFuego-btn:before {
   position: absolute;
   content: "FUEGO";
-  width: 100px;
+  width: 80px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -177,7 +177,7 @@ body {
 .spanBtnFuego .spanBtnFuego-btn:after {
   position: absolute;
   content: "🔥";
-  width: 100px;
+  width: 80px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -205,9 +205,8 @@ body {
 /* Btn Agua */
 .spanBtnAgua {
   display: inline-flex;
-  width: 100px;
+  width: 80px;
   height: 40px;
-  margin: 0 15px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -223,7 +222,7 @@ body {
 .spanBtnAgua .spanBtnAgua-btn:before {
   position: absolute;
   content: "AGUA";
-  width: 100px;
+  width: 80px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -236,7 +235,7 @@ body {
 .spanBtnAgua .spanBtnAgua-btn:after {
   position: absolute;
   content: "💧";
-  width: 100px;
+  width: 80px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -264,9 +263,8 @@ body {
 /* Btn Tierra */
 .spanBtnTiera {
   display: inline-flex;
-  width: 100px;
+  width: 80px;
   height: 40px;
-  margin: 0 15px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -282,7 +280,7 @@ body {
 .spanBtnTiera .spanBtnTiera-btn:before {
   position: absolute;
   content: "TIERRA";
-  width: 100px;
+  width: 80px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -295,7 +293,7 @@ body {
 .spanBtnTiera .spanBtnTiera-btn:after {
   position: absolute;
   content: "🌱";
-  width: 100px;
+  width: 80px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -323,15 +321,14 @@ body {
 /* --------------------/ Botones ------------------- */
 
 .petChosenEnemy-img {
-  width: 80px;
+  width: 65px;
   margin: 0 auto;
   transition: all .3s;
 }
 
 .containerBtns {
   display: flex;
-  justify-content: center;
-  height: 70px;
+  justify-content: space-between;
 }
 
 .notSelectPet {
@@ -377,7 +374,7 @@ body {
 
 .playersLives-player__lives,
 .playersLives-enemy__lives {
-  font-size: 40px;
+  font-size: 30px;
   margin: 0;
   color: #e91e63;
 }
@@ -511,11 +508,6 @@ body {
     width: 60px;
   }
 
-  .petsChosen-pet {
-    min-width: 120px;
-  }
-  
-
   .selectAttack {
     box-shadow: none;
   }
@@ -527,18 +519,5 @@ body {
   .playersLives-player,
   .playersLives-enemy {
     width: 50%;
-  }
-
-  .containerBtns {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    margin-bottom: 15px;
-  }
-
-  .spanBtnFuego,
-  .spanBtnAgua,
-  .spanBtnTiera {
-    margin: 15px 0;
   }
 }
